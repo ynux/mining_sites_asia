@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Mining Sites</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+
+      <script>
+
+async function populate() {
+    const requestURL = 'https://github.com/ynux/ynux.github.io/blob/main/data/annan_guxue.json';
+    const request = new Request(requestURL);
+
+    const response = await fetch(request);
+    const siteData = await response.json();
+
+    try {
+        JSON.parse(siteData);
+    } catch (e) {
+        console.log("not valid jsoen")
+    }
+
+    populateSites(siteData);
+    populateSites(siteData);
+}
+
+function populateSites(obj) {
+    const section = document.querySelector('section');
+    const sites = obj.members;
+  
+    for (const site of sites) {
+      const myArticle = document.createElement('article');
+      const myH2 = document.createElement('h2');
+      const myPara1 = document.createElement('p');
+      const myPara2 = document.createElement('p');
+      const myPara3 = document.createElement('p');
+      const myList = document.createElement('ul');
+  
+      myH2.textContent = site.name;
+      myPara1.textContent = `roman name: ${site.otherNames.rom}`;
+      myPara2.textContent = `geolocation: ${site.geoloc}`;
+      myPara3.textContent = `Remarks:' ${site.remark}`;
+  
+      myArticle.appendChild(myH2);
+      myArticle.appendChild(myPara1);
+      myArticle.appendChild(myPara2);
+      myArticle.appendChild(myPara3);
+  
+      section.appendChild(myArticle);
+    }
+  }
+
+function populateHeader(obj) {
+    const header = document.querySelector('header');
+    const myH1 = document.createElement('h1');
+    myH1.textContent = obj.name;
+    header.appendChild(myH1);
+  }
+ 
+  populate();
+
+      </script>
+  </body>
+</html>
