@@ -4,9 +4,14 @@
     <meta charset="utf-8">
 
     <title>Mining Sites</title>
-
-    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Roboto">
+    <style>
+      body {
+        font-family: 'Roboto', serif;
+        font-size: 21px;
+      }
+    </style>
   </head>
 
   <body>
@@ -66,7 +71,6 @@ function populateSites(obj) {
       const myPara1 = document.createElement('p');
       const myPara2 = document.createElement('p');
       const myPara3 = document.createElement('p');
-      const sourcesList = document.createElement('ul');
   
       myH2.textContent = site.name;
       myPara1.textContent = `roman name: ${site.otherNames.rom}`;
@@ -85,6 +89,8 @@ function populateSites(obj) {
 function populateHeader(obj) {
     const header = document.querySelector('header');
     const myH1 = document.createElement('h1');
+    const sourcesList = document.createElement('ul');
+
     myH1.textContent = obj.name;
     header.appendChild(myH1);
 
@@ -95,13 +101,13 @@ function populateHeader(obj) {
 
     const sourceTradPara = document.createElement('p');
       sourceTradPara.textContent = `Traditional Sources:`
-    const sourcesTradShortnames = obj.sources.traditional.shortnames;
+    const sourcesTradShortnames = obj.sources.traditional.ShortNames;
        for (const shortname of sourcesTradShortnames) {
          const listItem = document.createElement('li');
          listItem.textContent = shortname;
          sourcesList.appendChild(listItem);
        }
-     header.appendChild(sourceTradPara);
+     header.appendChild(sourcesList);
 
   }
  
