@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Nanny's Sites</title>
+    <title>Mining Sites</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
 
@@ -22,25 +22,14 @@
       <script>
 
 async function populate() {
-  
-    const response = fetch("annan_guxue.json");
-    const nannysSites = await response.json();
-  
-    populateHeader(nannysSites);
-  }
- 
-function show_json() {
-  const fs = require('fs');
-  const json_data = require('./annan_guxue.json');
+    const requestURL = 'https://github.com/ynux/mining_sites_asia/data/blob/main/annan_guxue.json';
+    const request = new Request(requestURL);
 
-  fs.readFile(json_data, 'utf8', function (err, data) {
-    try {
-      data = JSON.parse(data)
-      console.log(data)
-    } catch (e) {
-      // Catch error in case file doesn't exist or isn't valid JSON
-    }
-  });
+    const response = await fetch(request);
+    const siteData = await response.json();
+
+    populateSites(siteData);
+    populateSites(siteData);
 }
 
 function populateSites(obj) {
@@ -56,22 +45,14 @@ function populateSites(obj) {
       const myList = document.createElement('ul');
   
       myH2.textContent = site.name;
-      myPara1.textContent = `Secret identity: ${site.secretIdentity}`;
-      myPara2.textContent = `Age: ${site.age}`;
-      myPara3.textContent = 'Superpowers:';
-  
-      const superPowers = site.powers;
-      for (const power of superPowers) {
-        const listItem = document.createElement('li');
-        listItem.textContent = power;
-        myList.appendChild(listItem);
-      }
+      myPara1.textContent = `roman name: ${site.otherNames.rom}`;
+      myPara2.textContent = `geolocation: ${site.geoloc}`;
+      myPara3.textContent = `Remarks:' ${site.remark}`;
   
       myArticle.appendChild(myH2);
       myArticle.appendChild(myPara1);
       myArticle.appendChild(myPara2);
       myArticle.appendChild(myPara3);
-      myArticle.appendChild(myList);
   
       section.appendChild(myArticle);
     }
@@ -84,7 +65,7 @@ function populateHeader(obj) {
     header.appendChild(myH1);
   }
  
-  show_json();
+  populateHeader(data);
 
       </script>
   </body>
