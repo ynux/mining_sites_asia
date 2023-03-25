@@ -1,0 +1,93 @@
+[{
+  "type": "site",
+  "subtypes": ["settlement", "mine"],
+  "name":  "安南",
+  "other_names": {"rom": "Annan"},
+  "mining_region": "north Yunnan",
+  "administrative_unit": {"province": "Yunnan", "Cun": "安南村", "County": "Dêqên", "country": "China"},
+  "geoloc": { "longlat": "27.607592, 100.019092", "confidence": "high"},
+  "associated_sites": ["寳興場", "龙汪边村", "兰家村"],
+  "sources": {"modern": []},
+  "maps": ["Yunnan quanshengtu"],
+  "remark": "Google Earth historic satellite imagery shows no active or recent mining, (low res imagery from 1985, high res from about 2010).",
+  "Fieldwork": {"visited": "no"}
+},
+{
+  "type": "map",
+  "name": "Yunnan quanshengtu",
+  "year": "1912",
+  "remark": "shows Annanshan chang 安南山厰 in a location correlating with modern Annan cun. In addition, the map indicates Mokangchang 磨康厰, presumably another mine, northeast of Annan and half way to Dayandong 大岩洞. I believe this to be Makang gold mine recorded in DKTL (1844), j. 2, p. 21-22: 麻康廠在中甸南，其東則安南銀廠。中甸廳同知理之。乾隆十九年開，每金一兩，抽課金二錢，額課金十一兩二錢，閏加五錢。 (opened 1755, annual tax 11.2 liang). No resembling name in modern maps; the best geographic correlation is the area of Jiulong 九龙 ( 27°42'15.37N, 100° 1'19.51E) and Dahuotang 大火堂 (27°42'9.43N, 100° 2'55.39E). No record for Guxue",
+  "contains": {"name": "安南山厰", "other_name": "Annanshan chang", "interpretation": "location correlating with modern Annan cun", "remark": "Shows Mokangchang in vicinity, probably Makang gold mine"}
+},
+{
+  "type": "site",
+  "subtypes": ["settlement", "mine"],
+  "name": "古學",
+  "other_names": {"rom": "Guxue"},
+  "administrative_unit": {"province": "Yunnan", "Cun": "古学村", "County": "Dêrong", "Prefecture": "Garzê", "country": "China"},
+  "geoloc": {"longlat": "28.406328, 99.262425", "confidence": "high"},
+  "sources": {"modern": []},
+  "remark": "Google Earth historic satellite imagery shows no active or recent mining, (low res imagery from 1985, high res from about 2010)."
+},
+{
+  "type": "qing_administrative_chang",
+  "name": "安南古學",
+  "sites": ["安南 ","古學"],
+  "sources": {"traditional": { "short_names":["QL YNTZ"]},
+    "interpretation": "The Administrative records suggest two mines located close to each other. The location of Annan is specified as southeast of Zhongdian. Tax quotas suggest middling importance for Guxue and considerable importance for Annan. The official dates of operation suggest that exploitation began at Guxue in 1725 or shortly before and that Annan replaced the earlier site about 1751."},
+  "Analysis": "Annan and Guxue are over 100 km apart, yet were administratively treated as 1 mine. Administrative records suggest that Guxue was worked 1725-1752, and Annan from 1751 to the 1850s. Oral histories, however, date the beginnings of exploitation at Annan to the 1720s and identify 2 mining areas. Toponyms suggest several further sites of exploitation and smelting in the Annan area, while no .  Zhongdian 中甸 subprefecture as military outpost established 1724. The arrival of Muslim Chinese from northwest China and the beginning of intensive mining probably occurred in this context. Earlier exploitation under Tibetan or Lijiang rule is possible. It appears probable that both Guxue and Annan were worked from the 1720s, with Guxue exhausted by about 1750, while Annan or new sites worked in this area expanded.  The absence of records on Guxue in early maps suggests that the mine was long abandoned by around 1900-1920, with any remaining village too small to be mapped. A connection between Guxue and  Hongpo (see Hongpo), another mine in the Tibetan borderlands of northern Yunnan, is possible, yet Hongpo was administratively located in Weixi.  Tax records reflect increasing productivity, possibly in connection with the development of new sites in the Annan area at some point in the second half of the 18th century. By 1829, outputs were apparently decreasing, as reported revenues were only half of the maximum tax quota of 2522 liang that is recorded in DKTL.  On account of remoteness and difficulties of supply, the presence of rich ores would have been a precondition of exploitation.  ", 
+  "Output_estimate": "Period of intensive exploitation: 1720s-1850s, ca. 130 years.  Tax quotas suggest middling to relatively high outputs.profitable exploitation of over 1 century, leaving established communities Uncertainty high, due to scarce data. Fieldwork at least in the Annan area desirable.  Note: The estimate is set at the minimum of due to high uncertainty. It includes the sites in the Annan area, Guxue and Hongpo.", 
+  "estimate": {"number":"50" , "unit":"tons"}
+},
+{ "type": "source",
+  "subtype": "traditional",
+  "short_name": "QL YNTZ",
+  "year": 1736,
+  "juan": 30,
+  "page": 1122,
+  "content": "古學銀廠坐落中甸地方。雍正三年巡撫楊名時爲僃陳中甸善後事宐等事。每銀一兩抽課一錢五分撒散三分，年該課銀五百六十八兩五錢三分六釐一毫，遇閏不加",
+  "paraphrase": "Guxue Ag mines opened 1725, under administration of Zhongdian, annual tax quota 568.5 liang.",
+  "remark": "Similar in HCTD (1787), j. 8 pag. illegible and HDSL, j. 49."
+},
+{
+  "type": "lookup_data",
+  "name": "geolocation confidence",
+  "levels" : {"full": "known to be correct", "high": "about 2 km", "medium": "about 5 km", "low": "more than 5"}
+},
+{
+  "type": "site",
+  "subtypes": ["settlement"],
+  "other_names": {"rom": "Lanjiacun"},
+  "geoloc": {"longlat": "27.389422, 100.118833", "confidence": "full"},
+  "name": "兰家村"
+},
+{
+  "type": "site",
+  "subtypes": ["mine"],
+  "other_names": {"rom": "Baoxingchang"},
+  "name": "寳興場",
+  "geoloc": {"longlat": "27.784392, 99.858400", "confidence": "high"},
+  "administrative_unit": {"Cun":"浪丁", "other_cun": {"rom":"Langding"}}
+},
+{
+  "type": "site",
+  "name": "龙汪边村",
+  "other_names": "Longwangbian",
+  "subtypes": ["settlement"],
+  "geoloc": {"longlat":"27.386625, 100.119833", "confidence": "full"}
+},
+{ "type": "source",
+  "subtype": "traditional",
+  "short_name": "DG YNTZG",
+  "year": "1835",
+  "juan": "74",
+  "page": "620",
+  "content": "[…] 案冊：古學廠乾隆十七年封閉。安南銀厰乾隆十六年巡撫愛必達開，[…]案冊：中甸廰經管安南古厰，道光九年分報解課銀一千二百十二兩三錢一分",
+  "paraphrase": "Quoting from provincial government records: Guxue closed in 1752. Annan opened 1751. Zhongdian sub-prefecture reported tax revenues of 1212.31 liang in 1829 from the Annan mines.",
+  "remark": "Similar in HCTD (1787), j. 8 pag. illegible and HDSL, j. 49."
+}
+]
+
+
+
+

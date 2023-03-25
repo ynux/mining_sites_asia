@@ -1,0 +1,35 @@
+{
+    "type": "qing_administrative_chang",
+    "name": "安南古學",
+    "sources": {"traditional": { "ShortNames":["QL YNTZ"]},
+      "interpretation": "The Administrative records suggest two mines located close to each other. The location of Annan is specified as southeast of Zhongdian. Tax quotas suggest middling importance for Guxue and considerable importance for Annan. The official dates of operation suggest that exploitation began at Guxue in 1725 or shortly before and that Annan replaced the earlier site about 1751."}, 
+      "analysis": "Annan and Guxue are over 100 km apart, yet were administratively treated as 1 mine. Administrative records suggest that Guxue was worked 1725-1752, and Annan from 1751 to the 1850s. Oral histories, however, date the beginnings of exploitation at Annan to the 1720s and identify 2 mining areas. Toponyms suggest several further sites of exploitation and smelting in the Annan area, while no .  Zhongdian 中甸 subprefecture as military outpost established 1724. The arrival of Muslim Chinese from northwest China and the beginning of intensive mining probably occurred in this context. Earlier exploitation under Tibetan or Lijiang rule is possible. It appears probable that both Guxue and Annan were worked from the 1720s, with Guxue exhausted by about 1750, while Annan or new sites worked in this area expanded.  The absence of records on Guxue in early maps suggests that the mine was long abandoned by around 1900-1920, with any remaining village too small to be mapped. A connection between Guxue and  Hongpo (see Hongpo), another mine in the Tibetan borderlands of northern Yunnan, is possible, yet Hongpo was administratively located in Weixi.  Tax records reflect increasing productivity, possibly in connection with the development of new sites in the Annan area at some point in the second half of the 18th century. By 1829, outputs were apparently decreasing, as reported revenues were only half of the maximum tax quota of 2522 liang that is recorded in DKTL.  On account of remoteness and difficulties of supply, the presence of rich ores would have been a precondition of exploitation.  ", 
+      "outputEstimate": "Period of intensive exploitation: 1720s-1850s, ca. 130 years.  Tax quotas suggest middling to relatively high outputs.profitable exploitation of over 1 century, leaving established communities Uncertainty high, due to scarce data. Fieldwork at least in the Annan area desirable.  Note: The estimate is set at the minimum of due to high uncertainty. It includes the sites in the Annan area, Guxue and Hongpo.", 
+       "estimate": {"number":"50" , "unit":"tons"},
+  "sites": [
+    {
+        "type": "site",
+        "subtypes": ["settlement", "mine"],
+        "name":  "安南",
+        "otherNames": {"rom": "Annan"},
+        "miningRegion": "north Yunnan",
+        "administrativeUnit": {"province": "Yunnan", "Cun": "安南村", "County": "Dêqên", "country": "China"},
+        "geoloc": { "longlat": "27.607592, 100.019092", "confidence": "high"},
+        "associatedSites": ["寳興場", "龙汪边村", "兰家村"],
+        "sources": {"modern": []},
+        "maps": ["Yunnan quanshengtu"],
+        "remark": "Google Earth historic satellite imagery shows no active or recent mining, (low res imagery from 1985, high res from about 2010).",
+        "Fieldwork": {"visited": "no"}
+      },
+      {
+        "type": "site",
+        "subtypes": ["settlement", "mine"],
+        "name": "古學",
+        "otherNames": {"rom": "Guxue"},
+        "administrativeUnit": {"province": "Yunnan", "Cun": "古学村", "County": "Dêrong", "Prefecture": "Garzê", "country": "China"},
+        "geoloc": {"longlat": "28.406328, 99.262425", "confidence": "high"},
+        "sources": {"modern": []},
+        "remark": "Google Earth historic satellite imagery shows no active or recent mining, (low res imagery from 1985, high res from about 2010)."
+      }
+  ]
+  }

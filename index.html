@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Nanny's Sites</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+      <header>
+
+      </header>
+
+      <section>
+
+      </section>
+
+      <script>
+
+async function populate() {
+  
+    const response = fetch("annan_guxue.json");
+    const nannysSites = await response.json();
+  
+    populateHeader(nannysSites);
+  }
+ 
+function show_json() {
+  const fs = require('fs');
+  const json_data = require('./annan_guxue.json');
+
+  fs.readFile(json_data, 'utf8', function (err, data) {
+    try {
+      data = JSON.parse(data)
+      console.log(data)
+    } catch (e) {
+      // Catch error in case file doesn't exist or isn't valid JSON
+    }
+  });
+}
+
+function populateSites(obj) {
+    const section = document.querySelector('section');
+    const sites = obj.members;
+  
+    for (const site of sites) {
+      const myArticle = document.createElement('article');
+      const myH2 = document.createElement('h2');
+      const myPara1 = document.createElement('p');
+      const myPara2 = document.createElement('p');
+      const myPara3 = document.createElement('p');
+      const myList = document.createElement('ul');
+  
+      myH2.textContent = site.name;
+      myPara1.textContent = `Secret identity: ${site.secretIdentity}`;
+      myPara2.textContent = `Age: ${site.age}`;
+      myPara3.textContent = 'Superpowers:';
+  
+      const superPowers = site.powers;
+      for (const power of superPowers) {
+        const listItem = document.createElement('li');
+        listItem.textContent = power;
+        myList.appendChild(listItem);
+      }
+  
+      myArticle.appendChild(myH2);
+      myArticle.appendChild(myPara1);
+      myArticle.appendChild(myPara2);
+      myArticle.appendChild(myPara3);
+      myArticle.appendChild(myList);
+  
+      section.appendChild(myArticle);
+    }
+  }
+
+function populateHeader(obj) {
+    const header = document.querySelector('header');
+    const myH1 = document.createElement('h1');
+    myH1.textContent = obj.name;
+    header.appendChild(myH1);
+  }
+ 
+  show_json();
+
+      </script>
+  </body>
+</html>
