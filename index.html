@@ -8,8 +8,7 @@
           href="https://fonts.googleapis.com/css?family=Roboto">
     <style>
       body {
-        font-family: 'Roboto', serif;
-        font-size: 21px;
+        font-family: 'Roboto', serif
       }
     </style>
   </head>
@@ -61,13 +60,31 @@ data = {
   ]
   }
 
-function populateSites(obj) {
+  function populateHeader(obj) {
+    const header = document.querySelector('header');
+    const myH1 = document.createElement('h1');
+
+    myH1.textContent = obj.name;
+    header.appendChild(myH1);
+
+    const changPara = document.createElement('p');
+      changPara.textContent = `This is a Qing administrative chang and consists of the sites below. 
+      `;
+      header.appendChild(changPara);
+
+  }
+  
+  function populateSites(obj) {
     const section = document.querySelector('section');
     const sites = obj.sites;
-  
+
+    const sitesH2 = document.createElement('h2');
+      sitesH2.textContent = `Mining Sites and Villages:`
+      section.appendChild(sitesH2); 
+
     for (const site of sites) {
       const myArticle = document.createElement('article');
-      const myH2 = document.createElement('h2');
+      const myH2 = document.createElement('h3');
       const myPara1 = document.createElement('p');
       const myPara2 = document.createElement('p');
       const myPara3 = document.createElement('p');
@@ -85,34 +102,36 @@ function populateSites(obj) {
       section.appendChild(myArticle);
     }
   }
-
-function populateHeader(obj) {
-    const header = document.querySelector('header');
-    const myH1 = document.createElement('h1');
+ 
+  function populateSources(obj) {
+    const section = document.querySelector('section');
     const sourcesList = document.createElement('ul');
 
-    myH1.textContent = obj.name;
-    header.appendChild(myH1);
+    const sourceTradHeader = document.createElement('h2');
+      sourceTradHeader.textContent = `Traditional Sources:`
+      section.appendChild(sourceTradHeader);
 
-    const changPara = document.createElement('p');
-      changPara.textContent = `This is a Qing administrative chang and consists of the sites below. 
-      `;
-      header.appendChild(changPara);
-
-    const sourceTradPara = document.createElement('p');
-      sourceTradPara.textContent = `Traditional Sources:`
     const sourcesTradShortnames = obj.sources.traditional.ShortNames;
        for (const shortname of sourcesTradShortnames) {
          const listItem = document.createElement('li');
          listItem.textContent = shortname;
          sourcesList.appendChild(listItem);
        }
-     header.appendChild(sourcesList);
+     section.appendChild(sourcesList);
 
+    const sources = obj.sources
+    const sourceInterPara = document.createElement('p');
+      sourceInterPara.textContent = `Interpretation: ${sources.interpretation} `;
+      section.appendChild(sourceInterPara);
+
+    const sourceAnaPara = document.createElement('p');
+      sourceAnaPara.textContent = `Analysis: ${sources.analysis} `;
+      section.appendChild(sourceAnaPara);
   }
- 
+
   populateHeader(data);
   populateSites(data);
+  populateSources(data);
 
       </script>
   </body>
