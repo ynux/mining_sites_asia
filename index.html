@@ -5,7 +5,7 @@
 
     <title>Mining Sites</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Trirong" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
   </head>
 
@@ -66,11 +66,11 @@ function populateSites(obj) {
       const myPara1 = document.createElement('p');
       const myPara2 = document.createElement('p');
       const myPara3 = document.createElement('p');
-      const myList = document.createElement('ul');
+      const sourcesList = document.createElement('ul');
   
       myH2.textContent = site.name;
       myPara1.textContent = `roman name: ${site.otherNames.rom}`;
-      myPara2.textContent = `geolocation: ${site.geoloc}`;
+      myPara2.textContent = `geolocation: ${site.geoloc.longlat} with confidence ${site.geoloc.confidence}`;
       myPara3.textContent = `Remarks:' ${site.remark}`;
   
       myArticle.appendChild(myH2);
@@ -87,6 +87,22 @@ function populateHeader(obj) {
     const myH1 = document.createElement('h1');
     myH1.textContent = obj.name;
     header.appendChild(myH1);
+
+    const changPara = document.createElement('p');
+      changPara.textContent = `This is a Qing administrative chang and consists of the sites below. 
+      `;
+      header.appendChild(changPara);
+
+    const sourceTradPara = document.createElement('p');
+      sourceTradPara.textContent = `Traditional Sources:`
+    const sourcesTradShortnames = obj.sources.traditional.shortnames;
+       for (const shortname of sourcesTradShortnames) {
+         const listItem = document.createElement('li');
+         listItem.textContent = shortname;
+         sourcesList.appendChild(listItem);
+       }
+     header.appendChild(sourceTradPara);
+
   }
  
   populateHeader(data);
