@@ -27,11 +27,25 @@
 data = {
     "type": "qing_administrative_chang",
     "name": "安南古學",
-    "sources": {"traditional": { "ShortNames":["QL YNTZ"]},
-      "interpretation": "The Administrative records suggest two mines located close to each other. The location of Annan is specified as southeast of Zhongdian. Tax quotas suggest middling importance for Guxue and considerable importance for Annan. The official dates of operation suggest that exploitation began at Guxue in 1725 or shortly before and that Annan replaced the earlier site about 1751."}, 
-      "analysis": "Annan and Guxue are over 100 km apart, yet were administratively treated as 1 mine. Administrative records suggest that Guxue was worked 1725-1752, and Annan from 1751 to the 1850s. Oral histories, however, date the beginnings of exploitation at Annan to the 1720s and identify 2 mining areas. Toponyms suggest several further sites of exploitation and smelting in the Annan area, while no .  Zhongdian 中甸 subprefecture as military outpost established 1724. The arrival of Muslim Chinese from northwest China and the beginning of intensive mining probably occurred in this context. Earlier exploitation under Tibetan or Lijiang rule is possible. It appears probable that both Guxue and Annan were worked from the 1720s, with Guxue exhausted by about 1750, while Annan or new sites worked in this area expanded.  The absence of records on Guxue in early maps suggests that the mine was long abandoned by around 1900-1920, with any remaining village too small to be mapped. A connection between Guxue and  Hongpo (see Hongpo), another mine in the Tibetan borderlands of northern Yunnan, is possible, yet Hongpo was administratively located in Weixi.  Tax records reflect increasing productivity, possibly in connection with the development of new sites in the Annan area at some point in the second half of the 18th century. By 1829, outputs were apparently decreasing, as reported revenues were only half of the maximum tax quota of 2522 liang that is recorded in DKTL.  On account of remoteness and difficulties of supply, the presence of rich ores would have been a precondition of exploitation.  ", 
-      "outputEstimate": "Period of intensive exploitation: 1720s-1850s, ca. 130 years.  Tax quotas suggest middling to relatively high outputs.profitable exploitation of over 1 century, leaving established communities Uncertainty high, due to scarce data. Fieldwork at least in the Annan area desirable.  Note: The estimate is set at the minimum of due to high uncertainty. It includes the sites in the Annan area, Guxue and Hongpo.", 
-       "estimate": {"number":"50" , "unit":"tons"},
+    "sources": {
+       "traditional": 
+       [
+         { "type": "source",
+           "subtype": "traditional",
+           "shortName": "QL YNTZ",
+           "year": 1736,
+           "juan": 30,
+           "page": 1122,
+           "content": "古學銀廠坐落中甸地方。雍正三年巡撫楊名時爲僃陳中甸善後事宐等事。每 銀一兩抽課一錢五分撒散三分，年該課銀五百六十八兩五錢三分六釐一毫，遇閏不加",
+           "paraphrase": "Guxue Ag mines opened 1725, under administration of Zhongdian, annual tax quota 568.5 liang.",
+           "remark": "Similar in HCTD (1787), j. 8 pag. illegible and HDSL, j. 49."
+          }
+        ],
+     "interpretation": "The Administrative records suggest two mines located close to each other. The location of Annan is specified as southeast of Zhongdian. Tax quotas suggest middling importance for Guxue and considerable importance for Annan. The official dates of operation suggest that exploitation began at Guxue in 1725 or shortly before and that Annan replaced the earlier site about 1751.",
+    },
+    "analysis": "Annan and Guxue are over 100 km apart, yet were administratively treated as 1 mine. Administrative records suggest that Guxue was worked 1725-1752, and Annan from 1751 to the 1850s. Oral histories, however, date the beginnings of exploitation at Annan to the 1720s and identify 2 mining areas. Toponyms suggest several further sites of exploitation and smelting in the Annan area, while no .  Zhongdian 中甸 subprefecture as military outpost established 1724. The arrival of Muslim Chinese from northwest China and the beginning of intensive mining probably occurred in this context. Earlier exploitation under Tibetan or Lijiang rule is possible. It appears probable that both Guxue and Annan were worked from the 1720s, with Guxue exhausted by about 1750, while Annan or new sites worked in this area expanded.  The absence of records on Guxue in early maps suggests that the mine was long abandoned by around 1900-1920, with any remaining village too small to be mapped. A connection between Guxue and  Hongpo (see Hongpo), another mine in the Tibetan borderlands of northern Yunnan, is possible, yet Hongpo was administratively located in Weixi.  Tax records reflect increasing productivity, possibly in connection with the development of new sites in the Annan area at some point in the second half of the 18th century. By 1829, outputs were apparently decreasing, as reported revenues were only half of the maximum tax quota of 2522 liang that is recorded in DKTL.  On account of remoteness and difficulties of supply, the presence of rich ores would have been a precondition of exploitation. ",
+     "outputEstimate": "Period of intensive exploitation: 1720s-1850s, ca. 130 years.  Tax quotas suggest middling to relatively high outputs.profitable exploitation of over 1 century, leaving established communities Uncertainty high, due to scarce data. Fieldwork at least in the Annan area desirable.  Note: The estimate is set at the minimum of due to high uncertainty. It includes the sites in the Annan area, Guxue and Hongpo.", 
+     "estimate": {"number":"50" , "unit":"tons"},
   "sites": [
     {
         "type": "site",
@@ -79,7 +93,7 @@ data = {
     const sites = obj.sites;
 
     const sitesH2 = document.createElement('h2');
-      sitesH2.textContent = `Mining Sites and Villages:`
+      sitesH2.textContent = `Mining Sites:`
       section.appendChild(sitesH2); 
 
     for (const site of sites) {
@@ -92,7 +106,7 @@ data = {
       myH2.textContent = site.name;
       myPara1.textContent = `roman name: ${site.otherNames.rom}`;
       myPara2.textContent = `geolocation: ${site.geoloc.longlat} with confidence ${site.geoloc.confidence}`;
-      myPara3.textContent = `Remarks:' ${site.remark}`;
+      myPara3.textContent = `Remarks: ${site.remark}`;
   
       myArticle.appendChild(myH2);
       myArticle.appendChild(myPara1);
@@ -106,32 +120,41 @@ data = {
   function populateSources(obj) {
     const section = document.querySelector('section');
     const sourcesList = document.createElement('ul');
+    const sources = obj.sources
 
     const sourceTradHeader = document.createElement('h2');
       sourceTradHeader.textContent = `Traditional Sources:`
       section.appendChild(sourceTradHeader);
 
-    const sourcesTradShortnames = obj.sources.traditional.ShortNames;
-       for (const shortname of sourcesTradShortnames) {
+    const sourcesTrad= obj.sources.traditional;
+       for (const sourceTrad of sourcesTrad) {
          const listItem = document.createElement('li');
-         listItem.textContent = shortname;
+         listItem.textContent = `${sourceTrad.shortName} --- Content: ${sourceTrad.content}`;
          sourcesList.appendChild(listItem);
        }
-     section.appendChild(sourcesList);
+    section.appendChild(sourcesList);
 
-    const sources = obj.sources
     const sourceInterPara = document.createElement('p');
       sourceInterPara.textContent = `Interpretation: ${sources.interpretation} `;
       section.appendChild(sourceInterPara);
+    }
+      
+  function populateRest(obj) {
+    const section = document.querySelector('section');
 
-    const sourceAnaPara = document.createElement('p');
-      sourceAnaPara.textContent = `Analysis: ${sources.analysis} `;
-      section.appendChild(sourceAnaPara);
+    const analysis = document.createElement('h2');
+      analysis.textContent = `Analysis:`
+      section.appendChild(analysis);
+
+    const analysisPara = document.createElement('p');
+      analysisPara.textContent = `Analysis: ${obj.analysis} `;
+      section.appendChild(analysisPara);
   }
 
   populateHeader(data);
   populateSites(data);
   populateSources(data);
+  populateRest(data);
 
       </script>
   </body>
