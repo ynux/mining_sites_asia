@@ -22,11 +22,17 @@
       <script>
 
 async function populate() {
-    const requestURL = 'https://github.com/ynux/mining_sites_asia/data/blob/main/annan_guxue.json';
+    const requestURL = 'https://github.com/ynux/ynux.github.io/blob/main/data/annan_guxue.json';
     const request = new Request(requestURL);
 
     const response = await fetch(request);
     const siteData = await response.json();
+
+    try {
+        JSON.parse(siteData);
+    } catch (e) {
+        console.log("not valid jsoen")
+    }
 
     populateSites(siteData);
     populateSites(siteData);
@@ -65,7 +71,7 @@ function populateHeader(obj) {
     header.appendChild(myH1);
   }
  
-  populateHeader();
+  populate();
 
       </script>
   </body>
